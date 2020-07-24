@@ -172,3 +172,29 @@ and execute `app.sh`:
  + ./app.sh: line 8: /usr/bin/nc: Permission denied
  +
 ```
+
+## The profile
+
+The profile was generated on your system at `/etc/apparmor.d/<path-to-executable-slashes-to-dots>` and is owned by root.
+
+The contents were:
+
+```
+# Last Modified: Fri Jul 24 13:03:17 2020
+#include <tunables/global>
+
+/home/gve/src/apparmorify/src/app.sh {
+  #include <abstractions/base>
+  #include <abstractions/bash>
+  #include <abstractions/consoles>
+
+  /etc/terminfo/s/st-256color r,
+  /home/gve/src/apparmorify/src/app.sh r,
+  /usr/bin/bash ix,
+  /usr/bin/mkdir mrix,
+  /usr/bin/rm mrix,
+  /usr/bin/touch mrix,
+  owner /home/*/src/apparmorify/src/data/cached-assets w,
+
+}
+```
