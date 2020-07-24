@@ -1,0 +1,15 @@
+# Last Modified: Fri Jul 24 13:03:17 2020
+#include <tunables/global>
+
+
+/code/bin/app.sh {
+  #include <abstractions/base>
+  
+  /code/* r,
+  /code/data/ rw,
+  /code/data/** rw,
+  /code/bin/app.sh r,
+  /bin/busybox mrix,
+  owner /code/data/** rw,
+
+}
