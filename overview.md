@@ -1,6 +1,6 @@
 # overview
 
-using unix DAC to implement MAC for application confinement
+using unix [DAC](https://en.wikipedia.org/wiki/Discretionary_access_control) to implement [MAC](https://en.wikipedia.org/wiki/Mandatory_access_control) for application confinement
 
 # setup
 ## preliminary
@@ -95,6 +95,6 @@ apparmor module is loaded.
 > reliant applications and most bigger services, that either run with high
 > privileges or powergrab userspace
 
-> Notice the difference of enforce and complain modes
+> Notice the difference of enforce and complain modes: explicit deny rules will be enforced in complain mode.
 
 
