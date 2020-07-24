@@ -91,7 +91,9 @@ apparmor module is loaded.
 ```
 
 
-> Notice that there are many default profiles active/enabled for network reliant applications and most bigger services, that either run with high privileges or powergrab userspace
+> Notice that there are many default profiles active/enabled for network
+> reliant applications and most bigger services, that either run with high
+> privileges or powergrab userspace
 
 > Notice the difference of enforce and complain modes
 
