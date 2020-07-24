@@ -123,10 +123,28 @@ I ended up with this very simple profile:
    /code/data/** rw,
    /code/bin/app.sh r,
    /bin/busybox mrix,
-   /code/data/** rw,
 
 }
 ``` 
 
 > A unique busybox caveat it that busybox is the single responsible binary in
 > alpine, unless `coreutils` or similar package has been installed.
+
+
+## debugging
+
+### `apparmor failed to apply profile: write /proc/self/attr/exec`
+I had intially the issue that I was confusing the name of the profile with the
+name of the file and ended up with these alot:
+```
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "process_linux.go:449: container init
+caused \"apply apparmor profile: apparmor failed to apply profile: write /proc/self/attr/exec: no such file or directory\": unknown."
+```
+
+They indicate that the profile specified does not exist and not even basic
+process stuff is allowed for entrypoint and that makes docker fail in a funny
+way. To my understanding at least.
+
+
+The cause for me was at first, apparmor service did not pickup the new profile,
+then I specified the wrong name for the profile: resulting in the same error
