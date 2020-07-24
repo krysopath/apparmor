@@ -1,4 +1,4 @@
-# generate an AppArmor profile for an example script
+# generate AppArmor profile
 ## get the utils
 ```
 sudo apt install apparmor-utils
