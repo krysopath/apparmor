@@ -11,4 +11,5 @@ confine processes into a well defined execution context.
 
 1. [overview](overview.md)
 2. [profiling](profiling.md)
-2. [container](docker.md)
+3. [container](docker.md)
+4. [debugging](debugging.md)
